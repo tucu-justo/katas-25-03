@@ -80,7 +80,7 @@ class SearchSolutionTest {
         List<Product> results = searchSolution.searchProducts("fresh harvest", extendedInventory);
 
         assertFalse(results.isEmpty());
-        assertEquals("16", results.getFirst().getId()); // "Fresh Harvest" should be first (exact name match)
+        assertEquals("16", results.stream().findFirst().get().getId()); // "Fresh Harvest" should be first (exact name match)
     }
 
     @Test
